@@ -123,7 +123,6 @@ void main() {
         },
       );
 
-      //ne passe pas, je ne sais pas pourquoi
       test(
         'should return CacheFailure when their is no cached data present',
         () async {
@@ -134,7 +133,7 @@ void main() {
           //assert
           verifyZeroInteractions(mockRemoteDataSource);
           verify(mockLocalDataSource.getLastNumberTrivia());
-          expect(result, Left(CacheFailure));
+          expect(result, Left(CacheFailure()));
         },
       );
     });
